@@ -101,6 +101,11 @@ resource "azurerm_virtual_machine" "catapp" {
     version   = var.image_version
   }
 
+  tags = {
+      Billable = "true"
+      Department = "devops"
+    }
+  
   storage_os_disk {
     name              = "${var.prefix}-osdisk"
     managed_disk_type = "Standard_LRS"
